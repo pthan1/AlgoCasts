@@ -11,7 +11,7 @@
 //   const stringLength = str.length;
 //   const splitString = str.split("");
 //   let reversedString = [];
-//   for (let i = stringLength-1 ; i >= 0 ; i--) {
+//   for (let i = stringLength - 1 ; i >= 0 ; i--) {
 //     reversedString.push(splitString[i]);
 //   }
 //   reversedString = reversedString.join('');
