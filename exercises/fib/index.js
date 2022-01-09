@@ -8,6 +8,28 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+
+//recursive approach
+function fib(n) {
+  if (n < 2) {
+    return n;
+  }
+
+  return fib(n - 1) + fib(n - 2);
+}
+
+
+// iterative approach
+
+// function fib(n) {
+//   const fibSeries = [0, 1];
+
+//     for (i = 2; i <= n; i++) {
+//       fibSeries[i] = fibSeries[i - 1] + fibSeries[i - 2];
+//     }
+
+//   return fibSeries[n];
+// }
+
 
 module.exports = fib;
