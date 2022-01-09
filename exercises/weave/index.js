@@ -24,6 +24,42 @@
 
 const Queue = require('./queue');
 
-function weave(sourceOne, sourceTwo) {}
+//each queue has 3 methods;
+  // add: unshifts a new records
+  //remove: removes last element from qeue, returns it
+  //peek: return last element from queue, doesn't remove it
+
+
+//psuedo-code
+//input: two queues
+//output: a weaved queue
+
+// while both queue.data's have a length,
+
+  // peek at sourceOne,check if it's undefined
+    // if not, add it to result queue,
+    //if undefined, do nothing
+  //peek at source two, check if it's undefined
+    //if not, add it to result queue
+
+//return result queue
+
+function weave(sourceOne, sourceTwo) {
+  const resultQueue = new Queue();
+
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    if (sourceOne.peek()) {
+      resultQueue.add(sourceOne.remove());
+      
+    }
+
+    if (sourceTwo.peek()) {
+      resultQueue.add(sourceTwo.remove());
+      
+    }
+  }
+
+  return resultQueue;
+}
 
 module.exports = weave;
