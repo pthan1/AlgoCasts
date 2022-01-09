@@ -8,9 +8,24 @@
 // Example:
 //   fib(4) === 3
 
+//Memoizaiton on fibonacci
+function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
 
-//recursive approach
-function fib(n) {
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    
+    return result;
+}
+}
+
+
+//recursive approach - exponential time solution
+function slowFib(n) {
   if (n < 2) {
     return n;
   }
@@ -18,8 +33,9 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 
+const fib = memoize(slowFib);
 
-// iterative approach
+// iterative approach - linear time
 
 // function fib(n) {
 //   const fibSeries = [0, 1];
